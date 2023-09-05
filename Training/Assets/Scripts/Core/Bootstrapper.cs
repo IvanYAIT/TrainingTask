@@ -14,12 +14,14 @@ namespace Core
         [SerializeField] private KeyCode jumpKey;
 
         private Game _gama;
+        private LevelGenerator _levelGenerator;
 
         void Start()
         {
             _gama = new Game();
             PlayerController playerController = new PlayerController();
             LevelPool levelPool = new LevelPool(5, levelPartPrefab, levelPartContainer);
+            _levelGenerator = new LevelGenerator(levelPool);
             inputListener.Construct(playerController, jumpKey);
 
         }

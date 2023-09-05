@@ -18,7 +18,7 @@ namespace Level
 
         private void Update()
         {
-            transform.position -= new Vector3(1*Time.deltaTime, 0, 0);
+            transform.position -= new Vector3(3*Time.deltaTime, 0, 0);
         }
 
         public void GenerateObstcle()

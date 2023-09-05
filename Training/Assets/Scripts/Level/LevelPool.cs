@@ -17,6 +17,8 @@ namespace Level
             CreatePool(poolSize);
         }
 
+        public int Lenght => _pool.Count;
+
         public LevelPart GetFreeElement()
         {
             if (HasFreeElement(out LevelPart element))
