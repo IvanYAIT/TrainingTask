@@ -6,7 +6,7 @@ namespace Level
 {
     public class LevelGenerator
     {
-        private const float MOVE_DISTANCE = 150;
+        private const float MOVE_DISTANCE = 15;
         private LevelPool _pool;
 
         public LevelGenerator(LevelPool pool)
@@ -20,7 +20,7 @@ namespace Level
             for (int i = 0; i < _pool.Lenght; i++)
             {
                 GameObject levelPart = _pool.GetFreeElement().gameObject;
-                levelPart.transform.position = new Vector3(0, 0, MOVE_DISTANCE * i);
+                levelPart.transform.position = new Vector3(MOVE_DISTANCE * i, 0);
                 levelPart.SetActive(true);
             }
         }
