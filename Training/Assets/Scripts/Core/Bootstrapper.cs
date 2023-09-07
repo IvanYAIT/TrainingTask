@@ -1,7 +1,5 @@
 using Player;
 using Level;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Level.Bonus;
 
@@ -15,6 +13,7 @@ namespace Core
         [SerializeField] private KeyCode jumpKey;
         [SerializeField] private BonusView bonusView;
         [SerializeField] private GameView gameView;
+        [SerializeField] private PlayerData playerData;
 
         private bool isGameStarted=false;
         private Game _gama;
@@ -27,7 +26,7 @@ namespace Core
             BonusCollector bonusCollector = new BonusCollector(bonusView);
             LevelPool levelPool = new LevelPool(5, levelPartPrefab, levelPartContainer);
             _levelGenerator = new LevelGenerator(levelPool, levelPartContainer);
-            inputListener.Construct(playerController, jumpKey);
+            inputListener.Construct(playerController, jumpKey, playerData);
 
         }
 

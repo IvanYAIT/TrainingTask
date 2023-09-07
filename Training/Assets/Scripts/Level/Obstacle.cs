@@ -1,35 +1,40 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
+namespace Level
 {
-    [SerializeField] private float lenght;
-    [SerializeField] private float speed;
-
-    private float stratY;
-    private bool isGoUp = true;
-
-    private void Start()
+    public class Obstacle : MonoBehaviour
     {
-        stratY = transform.position.y;
-    }
+        [SerializeField] private float lenght;
+        [SerializeField] private float speed;
 
+        private float stratY;
+        private bool isGoUp = true;
 
-    void Update()
-    {
-        if(transform.position.y <= stratY && !isGoUp)
+        private void Start()
         {
-            if (speed < 0)
-                speed *= -1;
-            isGoUp = true;
-        } else if(transform.position.y >= stratY + lenght && isGoUp)
-        {
-            Debug.Log(1);
-            speed *= -1;
-            isGoUp = false;
+            stratY = transform.position.y;
         }
-        transform.position += new Vector3(0, speed * Time.deltaTime);
 
+
+        void Update()
+        {
+            Move();
+        }
+
+        private void Move()
+        {
+            if (transform.position.y <= stratY && !isGoUp)
+            {
+                if (speed < 0)
+                    speed *= -1;
+                isGoUp = true;
+            }
+            else if (transform.position.y >= stratY + lenght && isGoUp)
+            {
+                speed *= -1;
+                isGoUp = false;
+            }
+            transform.position += new Vector3(0, speed * Time.deltaTime);
+        }
     }
 }

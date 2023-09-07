@@ -12,14 +12,14 @@ namespace Level.Bonus
         public BonusCollector(BonusView view)
         {
             _view = view;
-            _view.BonusText.text = $"{bonuses}";
+            _view.ChangeText($"{bonuses}");
             OnBonusCollect += CollectBonus;
         }
 
         private void CollectBonus()
         {
             bonuses++;
-            _view.BonusText.text = $"{bonuses}";
+            _view.ChangeText($"{bonuses}");
         }
 
     }

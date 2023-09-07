@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Level
@@ -7,6 +5,7 @@ namespace Level
     public class LevelGenerator
     {
         private const float MOVE_DISTANCE = 18;
+        private const int AMOUNT_OF_INIT_PARTS = 2;
         private LevelPool _pool;
         private Transform _levelPartContainer;
 
@@ -19,7 +18,7 @@ namespace Level
 
         public void InitLevel()
         {
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < AMOUNT_OF_INIT_PARTS; i++)
             {
                 GameObject levelPart = _pool.GetFreeElement().gameObject;
                 levelPart.transform.position = new Vector3(MOVE_DISTANCE * i, 0);

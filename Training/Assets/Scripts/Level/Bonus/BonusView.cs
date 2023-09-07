@@ -7,6 +7,6 @@ namespace Level.Bonus
     {
         [SerializeField] private TextMeshProUGUI bonusText;
 
-        public TextMeshProUGUI BonusText => bonusText;
+        public void ChangeText(string msg) => bonusText.text = msg;
     }
 }
