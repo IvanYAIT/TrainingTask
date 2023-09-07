@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Bonus
   - Death
-  - 
+  - Player
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 3531943955
+    locked: 0
+  - name: Trail
+    uniqueID: 1971908061
     locked: 0

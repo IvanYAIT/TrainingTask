@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2114484194789406322}
   - component: {fileID: 7677332860782137021}
   - component: {fileID: 6421868576053467141}
+  - component: {fileID: 7503444424495204528}
   m_Layer: 3
   m_Name: Obstacle1 (2)
   m_TagString: Untagged
@@ -130,6 +131,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7503444424495204528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31367755415955667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed447dc941deaf643b47833d4b8173ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lenght: 3
+  speed: 3
 --- !u!1 &146564196085509999
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,6 +155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1416874393190198964}
   - component: {fileID: 3902142120702176489}
+  - component: {fileID: -1323253422183003052}
   m_Layer: 0
   m_Name: LevelPart
   m_TagString: Untagged
@@ -183,6 +199,51 @@ MonoBehaviour:
   deathLayerMask:
     serializedVersion: 2
     m_Bits: 128
+--- !u!61 &-1323253422183003052
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146564196085509999}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 18.48, y: 10.55}
+  m_EdgeRadius: 0
 --- !u!1 &392379979607681054
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +289,7 @@ GameObject:
   - component: {fileID: 2148291766022393162}
   - component: {fileID: 5441633763135519201}
   - component: {fileID: 443242441433966645}
+  - component: {fileID: 8634548633495802609}
   m_Layer: 3
   m_Name: Obstacle1 (1)
   m_TagString: Untagged
@@ -347,6 +409,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8634548633495802609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642894488799173059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed447dc941deaf643b47833d4b8173ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lenght: 2.5
+  speed: 2
 --- !u!1 &2266037991408348170
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +434,7 @@ GameObject:
   - component: {fileID: 9162499121811875266}
   - component: {fileID: 664789979819060391}
   - component: {fileID: 2836292052868348740}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bonus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -748,6 +824,7 @@ GameObject:
   - component: {fileID: 6996059500030632654}
   - component: {fileID: 3414560846189602712}
   - component: {fileID: 5453513529247255232}
+  - component: {fileID: 3968813798334437145}
   m_Layer: 3
   m_Name: Obstacle1
   m_TagString: Untagged
@@ -867,3 +944,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3968813798334437145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8675941420021995659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed447dc941deaf643b47833d4b8173ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lenght: 5
+  speed: 3

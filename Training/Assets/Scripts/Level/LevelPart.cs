@@ -11,8 +11,6 @@ namespace Level
 
         void Start()
         {
-            GenerateObstcle();
-            GenerateBonus();
             _deathLayer = (int)Mathf.Log(deathLayerMask, 2);
         }
 
@@ -42,6 +40,7 @@ namespace Level
                 {
                     obstacleContainer.GetChild(i).gameObject.SetActive(false);
                 }
+                transform.parent = transform.parent.parent;
                 gameObject.SetActive(false);
             }
         }

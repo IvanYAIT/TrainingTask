@@ -52,8 +52,6 @@ namespace Level
                     _pool[i].transform.position = _container.position;
                     _pool[i].transform.rotation = _container.rotation;
                     _pool[i].gameObject.SetActive(true);
-                    _pool[i].GenerateBonus();
-                    _pool[i].GenerateObstcle();
                     return true;
                 }
             }

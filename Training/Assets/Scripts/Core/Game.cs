@@ -12,16 +12,23 @@ namespace Core
 
         public static Action OnGameEnd;
 
-        public Game()
+        private GameView _gameView;
+
+        public Game(GameView gameView)
         {
+            _gameView = gameView;
             Pause();
             OnGameEnd += End;
         }
 
         public void Start(KeyCode startKey)
         {
+            _gameView.StartText.text = $"Press {startKey} to start";
             if (Input.GetKeyDown(startKey))
+            {
+                _gameView.StartText.text = "";
                 UnPause();
+            }
         }
 
         public void End() =>
