@@ -19,7 +19,7 @@ namespace Player
 
         void Update()
         {
-            if (Input.GetKey(_jumpKey))
+            if (Input.GetKey(_jumpKey) || Input.GetAxis("Jump") > 0)
                 _playerController.ReverseGravity(playerRb);
             else
                 _playerController.NormalizeGravity(playerRb);
