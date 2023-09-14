@@ -2,7 +2,7 @@ using Player;
 using Level;
 using UnityEngine;
 using Level.Bonus;
-using Zenject;
+using VContainer;
 
 namespace Core
 {

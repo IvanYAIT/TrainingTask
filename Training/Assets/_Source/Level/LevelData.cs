@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 namespace Level
 {
+    [Serializable]
     [CreateAssetMenu(fileName = "LevelData", menuName = "SO/NewLevelData")]
     public class LevelData : ScriptableObject
     {

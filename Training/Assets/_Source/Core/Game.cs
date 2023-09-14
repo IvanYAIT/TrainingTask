@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Zenject;
+using VContainer;
 
 namespace Core
 {
