@@ -1,35 +1,21 @@
-using Player;
-using Level;
-using UnityEngine;
-using Level.Bonus;
 using VContainer;
+using VContainer.Unity;
 
 namespace Core
 {
-    public class Bootstrappecr : MonoBehaviour
+    public class Bootstrapper : IStartable
     {
-        private bool isGameStarted=false;
-        private Game _gama;
-        private LevelGenerator _levelGenerator;
+        private IStateMachine _stateMachine;
 
         [Inject]
-        public void Construct(Game game, LevelGenerator levelGenerator)
+        public Bootstrapper(IStateMachine stateMachine)
         {
-            _gama = game;
-            _levelGenerator = levelGenerator;
+            _stateMachine = stateMachine;
         }
 
-        private void Update()
+        public void Start()
         {
-            if (!isGameStarted)
-            {
-                _gama.Start();
-                if (Time.timeScale == 1)
-                    isGameStarted = true;
-            }
-
-
-            _levelGenerator.Generate();
+            _stateMachine.ChangeState<PauseState>();
         }
     }
 }

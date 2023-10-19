@@ -28,7 +28,6 @@ namespace Core
 
             Container.Bind<BonusCollector>().AsSingle().NonLazy();
             Container.Bind<LevelPool>().AsSingle().NonLazy();
-            Container.Bind<Game>().AsSingle().NonLazy();
             Container.Bind<LevelGenerator>().AsSingle().NonLazy();
 
         }

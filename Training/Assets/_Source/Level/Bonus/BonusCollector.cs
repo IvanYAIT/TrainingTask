@@ -1,12 +1,9 @@
-using System;
 using VContainer;
 
 namespace Level.Bonus
 {
     public class BonusCollector
     {
-        public static Action OnBonusCollect;
-
         private BonusView _view;
         private int bonuses = 0;
 
@@ -15,10 +12,9 @@ namespace Level.Bonus
         {
             _view = view;
             _view.ChangeText($"{bonuses}");
-            OnBonusCollect += CollectBonus;
         }
 
-        private void CollectBonus()
+        public void CollectBonus()
         {
             bonuses++;
             _view.ChangeText($"{bonuses}");

@@ -13,17 +13,25 @@ public class GameLifetimeScope : LifetimeScope
 
     protected override void Configure(IContainerBuilder builder)
     {
+        builder.RegisterComponentInHierarchy<BonusView>();
+        builder.Register<BonusCollector>(Lifetime.Singleton);
+
         builder.Register<PlayerController>(Lifetime.Singleton);
         builder.RegisterInstance(levelData);
         builder.RegisterComponent(levelPartContainer);
         builder.RegisterComponentInHierarchy<InputListener>();
-        builder.RegisterComponentInHierarchy<BonusView>();
+        builder.RegisterComponentInHierarchy<Character>();
         builder.RegisterComponentInHierarchy<GameView>();
         builder.RegisterComponentInHierarchy<PlayerData>();
 
-        builder.Register<BonusCollector>(Lifetime.Singleton);
         builder.Register<LevelPool>(Lifetime.Singleton);
-        builder.Register<Game>(Lifetime.Singleton);
-        builder.Register<LevelGenerator>(Lifetime.Singleton);
+        builder.RegisterComponentInHierarchy<LevelGenerator>();
+
+        builder.Register<AState, GameState>(Lifetime.Scoped);
+        builder.Register<AState, PauseState>(Lifetime.Scoped);
+        builder.Register<AState, LoseState>(Lifetime.Scoped);
+
+        builder.Register<IStateMachine, GameStateMachine<AState>>(Lifetime.Scoped);
+        builder.RegisterEntryPoint<Bootstrapper>(Lifetime.Scoped);
     }
 }

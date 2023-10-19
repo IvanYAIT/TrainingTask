@@ -1,6 +1,7 @@
 using Core;
 using Level.Bonus;
 using UnityEngine;
+using VContainer;
 
 namespace Player
 {
@@ -8,8 +9,18 @@ namespace Player
     {
         [SerializeField] private LayerMask deathLayerMask;
         [SerializeField] private LayerMask bonusLayerMask;
+
         private int deathLayer;
         private int bonusLayer;
+        private IStateMachine _stateMachine;
+        private BonusCollector _bonusCollector;
+
+        [Inject]
+        public void Construct(IStateMachine stateMachine, BonusCollector bonusCollector)
+        {
+            _stateMachine = stateMachine;
+            _bonusCollector = bonusCollector;
+        }
 
         void Start()
         {
@@ -20,7 +31,7 @@ namespace Player
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.layer == deathLayer)
-                Game.OnGameEnd?.Invoke();
+                _stateMachine.ChangeState<LoseState>();
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -28,7 +39,7 @@ namespace Player
             if (collision.gameObject.layer == bonusLayer)
             {
                 collision.gameObject.SetActive(false);
-                BonusCollector.OnBonusCollect?.Invoke();
+                _bonusCollector.CollectBonus();
             }
         }
 
